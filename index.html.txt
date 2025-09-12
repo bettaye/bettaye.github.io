@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #333333;
+      --accent: #4a90e2;
+      --card-bg: #fafafa;
+      --gradient: linear-gradient(135deg, #4a90e2, #d16ba5, #9013fe);
+    }
+
+    [data-theme="dark"] {
+      --bg: #1e1e1e;
+      --text: #f0f0f0;
+      --accent: #4a90e2;
+      --card-bg: #2a2a2a;
+      --gradient: linear-gradient(135deg, #4a90e2, #d16ba5, #9013fe);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--gradient);
+      background-size: 600% 600%;
+      animation: gradientShift 12s ease infinite;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-top: 1rem;
+      border: 3px solid white;
+      object-fit: cover;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: var(--card-bg);
+      transition: transform 0.3s ease, background 0.3s ease;
+      text-align: center;
+    }
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      background: linear-gradient(135deg, rgba(74,144,226,0.1), rgba(209,107,165,0.1), rgba(144,19,254,0.1));
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #f4f4f4;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+    [data-theme="dark"] footer {
+      background: #111;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--gradient);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+  <header>
+    <h1>Your Name</h1>
+    <p>Cybersecurity Analyst | Cloud Enthusiast | Tech Explorer</p>
+    <img src="your-photo.jpg" alt="Profile picture" />
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m a cybersecurity and cloud enthusiast with a passion for building secure, efficient systems and creating tech solutions that make a difference. Welcome to my portfolio!</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <!-- Project Card Template:
+        Copy this <div class="project-card"> block to add a new project.
+        Update image src, title, description, and link accordingly.
+        Then commit changes in GitHub.
+      -->
+      <div class="project-card">
+        <img src="project1.jpg" alt="Project One preview" />
+        <h3>Project One</h3>
+        <p>A brief description of your project. Add a link below if it’s online.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="project2.jpg" alt="Project Two preview" />
+        <h3>Project Two</h3>
+        <p>Another project description. Keep it short and engaging.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="project3.jpg" alt="Project Three preview" />
+        <h3>Project Three</h3>
+        <p>Short description for your third project.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="project4.jpg" alt="Project Four preview" />
+        <h3>Project Four</h3>
+        <p>Short description for your fourth project.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="project5.jpg" alt="Project Five preview" />
+        <h3>Project Five</h3>
+        <p>Short description for your fifth project.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Let’s connect! Reach me via <a href="mailto:your.email@example.com">email</a> or find me on <a href="https://linkedin.com">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. Built with ❤️ and GitHub Pages.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute("data-theme");
+      if (currentTheme === "dark") {
+        body.setAttribute("data-theme", "light");
+        document.querySelector(".toggle-btn").textContent = "🌙 Dark Mode";
+      } else {
+        body.setAttribute("data-theme", "dark");
+        document.querySelector(".toggle-btn").textContent = "☀️ Light Mode";
+      }
+    }
+    // Set initial theme
+    document.body.setAttribute("data-theme", "light");
+  </script>
+</body>
+</html>
